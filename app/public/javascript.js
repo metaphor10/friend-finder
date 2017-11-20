@@ -21,8 +21,22 @@ var newSurvey = {
 
 // console.log(newSurvey);
 
-$.post("/api/friends", newSurvey).done(function(data) {
+console.log('obj', newSurvey);
+// console.log('1', JSON.stringify(JSON.parse(newSurvey)));
+// console.log('2', JSON.parse(newSurvey));
+
+$.post("/api/friends", {data: JSON.stringify(newSurvey)}, function(data) {
   console.log("new friend added", data);
 })
+
+// $.ajax({
+//         url: '/api/friends',
+//         type: "POST",
+//         data: {data: JSON.stringify(newSurvey)},
+//         dataType: 'text',
+//         success: function (data) {
+//           console.log("new friend added", data);
+//         }
+//     });
 
 })

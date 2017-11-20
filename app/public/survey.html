@@ -154,33 +154,48 @@
     <button type="submit" class="btn btn-primary" id="add-survey">Primary</button>
 
   </div>
-  <script type="text/javascript">
+  <!-- <script type="text/javascript">
     $("#add-survey").on("click", function(event) {
   event.preventDefault();
+// var scores = [];
+//     scores.push($("#one").val().trim());
+//     scores.push($("#two").val().trim());
+//     scores.push($("#three").val().trim());
+//     scores.push($("#four").val().trim());
+//     scores.push($("#five").val().trim());
+//     scores.push($("#six").val().trim());
+//     scores.push($("#seven").val().trim());
+//     scores.push($("#eight").val().trim());
+//     scores.push($("#nine").val().trim());
+//     scores.push($("#ten").val().trim());
 
 var newSurvey = {
-  name: $("#name").val().trim(),
-  photo: $("#image").val().trim(),
-  scores: [
-            $("#one").val().trim(),
-            $("#two").val().trim(),
-            $("#three").val().trim(),
-            $("#four").val().trim(),
-            $("#five").val().trim(),
-            $("#six").val().trim(),
-            $("#seven").val().trim(),
-            $("#eight").val().trim(),
-            $("#nine").val().trim(),
-            $("#ten").val().trim()
-          ]
+  // name: $("#name").val().trim(),
+  // photo: $("#image").val().trim()
 }
 
+newSurvey.scores1 = new Array();
+newSurvey.scores1.push($("#one").val().trim());
+newSurvey.scores1.push($("#two").val().trim());
+newSurvey.scores1.push($("#three").val().trim());
+newSurvey.scores1.push($("#four").val().trim());
+newSurvey.scores1.push($("#five").val().trim());
+newSurvey.scores1.push($("#six").val().trim());
+newSurvey.scores1.push($("#seven").val().trim());
+newSurvey.scores1.push($("#eight").val().trim());
+newSurvey.scores1.push($("#nine").val().trim());
+newSurvey.scores1.push($("#ten").val().trim());
 
+
+console.log('obj', newSurvey);
 $.post("/api/friends", newSurvey).done(function(data) {
 console.log('response', data);
 })
 
 })
+  </script> -->
+  <script type="text/javascript" src="javascript.js">
+
   </script>
 </body>
 </html>

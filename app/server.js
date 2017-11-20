@@ -8,6 +8,7 @@ app.use(bodyParser.json());
 
 require("./routing/htmlRoutes.js")(app);
 require("./routing/apiRoutes.js")(app);
+app.use(express.static(path.join(__dirname, 'public')));
 var friends = require("./data/friends.js");
 
 // app.get("/home", function(req, res) {
@@ -16,14 +17,15 @@ var friends = require("./data/friends.js");
 
 app.post("/api/friends", function(req, res) {
 
-  var surveyResults = req.body;
+  var surveyResults = JSON.parse(req.body.data);
+  console.log('obj', typeof surveyResults );
   console.log(surveyResults);
   surveyResults.name = surveyResults.name.replace(/\s+/g, "").toLowerCase();
   console.log(surveyResults.name);
   surveyResults.photo = surveyResults.photo.replace(/\s+/g, "").toLowerCase();
   console.log(surveyResults.photo);
   // surveyResults.scores = parseInt(surveyResults.scores[0].replace(/\s+/g, ""));
-  console.log(surveyResults['scores[]'][0]);
+  console.log(surveyResults['scores'][0]);
 
   res.json(surveyResults);
   // var newFriend = res.json(surveyResults);
