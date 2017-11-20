@@ -152,7 +152,7 @@
       You feel more energetic after spending time with a group of people.
     </h4>
     <button type="submit" class="btn btn-primary" id="add-survey">Primary</button>
-    
+
   </div>
   <script type="text/javascript">
     $("#add-survey").on("click", function(event) {
@@ -177,7 +177,7 @@ var newSurvey = {
 
 
 $.post("/api/friends", newSurvey).done(function(data) {
-console.log(data.newSurvey);
+console.log('response', data);
 })
 
 })
